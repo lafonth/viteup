@@ -8,7 +8,7 @@ import {
 import swc from "vite-plugin-swc-transform";
 
 function matchAllExternalModules(id: string) {
-	!id.startsWith(".") && !path.isAbsolute(id);
+	return !id.startsWith(".") && !path.isAbsolute(id);
 }
 
 export function getBaseConfig(
