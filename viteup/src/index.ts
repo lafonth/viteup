@@ -10,6 +10,6 @@ export const exports = getExports(pkg);
 export const entrypoints = getEntryPoints(exports);
 
 export const baseViteConfig = getBaseConfig(entrypoints);
-export const viteConfig = getViteConfig(entrypoints);
+export const viteConfig = await getViteConfig(entrypoints);
 
-export const build = async () => await viteBuild(await viteConfig);
+export const build = async () => await viteBuild(viteConfig);
