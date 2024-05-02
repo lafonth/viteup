@@ -11,15 +11,15 @@ export { readPackageJson };
 export { getViteConfig };
 
 export async function getResolvedViteConfig(pathToPackage = ".") {
-  const pkg = readPackageJson(pathToPackage);
-  const exports = getExports(pkg);
-  const entrypoints = getEntryPoints(exports);
+	const pkg = readPackageJson(pathToPackage);
+	const exports = getExports(pkg);
+	const entrypoints = getEntryPoints(exports);
 
-  return await getViteConfig(entrypoints, pathToPackage);
+	return await getViteConfig(entrypoints, pathToPackage);
 }
 
 export async function build(pathToPackage = ".") {
-  const viteConfig = await getResolvedViteConfig(pathToPackage);
+	const viteConfig = await getResolvedViteConfig(pathToPackage);
 
-  return viteBuild(viteConfig);
+	return viteBuild(viteConfig);
 }
